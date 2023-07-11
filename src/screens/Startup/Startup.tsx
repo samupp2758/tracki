@@ -4,9 +4,15 @@ import { useTheme } from '../../hooks';
 import { Brand } from '../../components';
 import { setDefaultTheme } from '../../store/theme';
 import { ApplicationScreenProps } from '../../../@types/navigation';
+import { store } from '../../store';
+import { changeUser } from 'tracki/src/store/user';
+import { useDispatch } from 'react-redux';
 
 const Startup = ({ navigation }: ApplicationScreenProps) => {
   const { Layout, Gutters } = useTheme();
+  const dispatch = useDispatch()
+  const state = store.getState()
+
 
   const init = async () => {
     await new Promise(resolve =>
@@ -17,7 +23,7 @@ const Startup = ({ navigation }: ApplicationScreenProps) => {
     await setDefaultTheme({ theme: 'default', darkMode: null });
     navigation.reset({
       index: 0,
-      routes: [{ name: 'Main' }],
+      routes: [{ name: !state.user.signedin ? 'QuickStart': 'Main' }],
     });
   };
 

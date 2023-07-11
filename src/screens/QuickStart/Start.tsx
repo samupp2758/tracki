@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
 import { useTheme } from '../../hooks';
 import { Brand } from '../../components';
 import { setDefaultTheme } from '../../store/theme';
 
 const Start = () => {
-  const { Layout, Gutters } = useTheme();
+  const { Layout, Gutters,Fonts } = useTheme();
 
   const init = async () => {
   /*  await new Promise(resolve =>
@@ -26,8 +26,7 @@ const Start = () => {
 
   return (
     <View style={[Layout.fill, Layout.colCenter]}>
-      <Brand />
-      <ActivityIndicator size={'large'} style={[Gutters.largeVMargin]} />
+        <Text style={[Fonts.titleRegular]}>Start</Text>
     </View>
   );
 };
