@@ -3,6 +3,7 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { useTheme } from '../../hooks';
 import { Brand } from '../../components';
 import { setDefaultTheme } from '../../store/theme';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Start = () => {
   const { Layout, Gutters,Fonts } = useTheme();
@@ -25,8 +26,8 @@ const Start = () => {
   }, []);
 
   return (
-    <View style={[Layout.fill, Layout.colCenter]}>
-        <Text style={[Fonts.titleRegular]}>Start</Text>
+    <View style={[Layout.fill]}>
+        <Text style={[Fonts.titleRegular,{marginTop:20,marginLeft:40}]}>Tracki</Text>
     </View>
   );
 };
