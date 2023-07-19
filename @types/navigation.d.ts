@@ -7,6 +7,7 @@ export type MainParamsList = {
 
 export type QuickStartParamsList = {
   Start: undefined;
+  Signin:undefined;
 }
 
 export type ApplicationStackParamList = {
@@ -16,4 +17,4 @@ export type ApplicationStackParamList = {
 };
 
 export type ApplicationScreenProps =
-  StackScreenProps<ApplicationStackParamList>;
+  StackScreenProps;

@@ -13,21 +13,22 @@ import { FontSize } from 'tracki/src/theme/Variables'
 import { Path, Svg, SvgUri, SvgXml } from 'react-native-svg'
 import { animated, easings, useSpring } from '@react-spring/native'
 import { useDispatch } from 'react-redux'
+import { ApplicationScreenProps } from 'tracki/@types/navigation'
 
 
-const Start = () => {
+const Start = ({ navigation }: ApplicationScreenProps) => {
   const [current, setcurrent] = useState(1)
   const dispatch = useDispatch()
   const { Layout, Gutters, Fonts, Colors } = useTheme()
   const backgrounds = [Colors.lightGray, Colors.primary, Colors.secondary]
   const logoColors = [Colors.dark, Colors.dark, Colors.white]
 
-  const viewAnimation = useSpring({
+  const [viewAnimation,changeViewAnimation] = useSpring(()=>({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    delay: 1200,
+    delay: 500,
     config: {},
-  })
+  }))
 
   const [changeAnimation, changePresentation] = useSpring(() => ({
     from: { right: 0, opacity: 1 },
@@ -39,14 +40,14 @@ const Start = () => {
     from: { color: logoColors[0] },
   }))
 
-  const init = async () => {}
+  const init = async () => {
+  }
+
+  useEffect(()=>{
+    init()
+  },[])
 
   useEffect(() => {
-    if (current == 3) {
-      dispatch(changeTheme({ darkMode: true }))
-    } else {
-      dispatch(changeTheme({ darkMode: false }))
-    }
   })
 
   const block1 = () => {
@@ -153,6 +154,7 @@ const Start = () => {
     changePresentation.start({ right: 200, opacity: 0 })
 
     setTimeout(() => {
+
       const temp = current == 3 ? 1 : current + 1
       setcurrent(temp)
       changePresentation.set({ right: -200 })
@@ -160,8 +162,25 @@ const Start = () => {
       changeBackground.start({ backgroundColor: backgrounds[temp - 1] })
       changeLogoAnimation.start({ color: logoColors[temp - 1] })
 
+
+
+      if (temp == 3) {
+        dispatch(changeTheme({ darkMode: true }))
+      } else {
+        dispatch(changeTheme({ darkMode: false }))
+      }
+
       console.log('Changing Presentation to block' + temp)
-    }, 500)
+    }, 200)
+  }
+
+  const getStarted = () => {
+    changeViewAnimation.start({opacity:0})
+
+    setTimeout(()=>{
+      dispatch(changeTheme({ darkMode: false }))
+      navigation.navigate('Signin');
+    },500)
   }
 
   return (
@@ -194,7 +213,7 @@ const Start = () => {
           {renderBlocks()}
         </animated.View>
         <View style={[]}>
-          <Button onPress={change} title='Next' />
+          <Button onPress={current == 3 ? getStarted : change} title={current == 3 ? 'Get Started' : 'Next'} />
         </View>
       </SafeAreaView>
     </animated.View>

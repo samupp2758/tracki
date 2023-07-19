@@ -29,7 +29,7 @@ const ApplicationNavigator = () => {
     <View style={[Layout.fill, { backgroundColor: colors.card }]}>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: false,animationEnabled:false }}>
           <Stack.Screen name="Startup" component={Startup} />
           <Stack.Screen name="Main" component={MainNavigator} />
           <Stack.Screen name="QuickStart" component={QuickStartNavigator} />
