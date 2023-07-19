@@ -19,8 +19,11 @@ export const Colors = {
   textGray400: '#4D4D4D',
   textGray200: '#A1A1A1',
   primary: '#C4FF61',
+  secondary: '#1a1a1a',
+  dark:"#000000",
   success: '#28a745',
   error: '#dc3545',
+  lightGray:'#EFEFEF',
   //ComponentColors
   circleButtonBackground: '#E1E1EF',
   circleButtonColor: '#44427D',
@@ -39,6 +42,7 @@ export const FontSize = {
   tiny: 14,
   small: 16,
   regular: 20,
+  midLarge:30,
   large: 40,
 };
 
