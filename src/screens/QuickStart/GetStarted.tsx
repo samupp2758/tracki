@@ -13,8 +13,9 @@ import { FontSize } from 'tracki/src/theme/Variables'
 import { Path, Svg, SvgUri, SvgXml } from 'react-native-svg'
 import { animated, easings, useSpring } from '@react-spring/native'
 import { useDispatch } from 'react-redux'
+import { ApplicationScreenProps } from 'tracki/@types/navigation'
 
-const Signin = ({ navigation }) => {
+const GetStarted = ({ navigation }: ApplicationScreenProps) => {
   const { Layout } = useTheme()
   return (
     <animated.View style={[Layout.fill, Layout.fullWidth]}>
@@ -25,4 +26,4 @@ const Signin = ({ navigation }) => {
   )
 }
 
-export default Signin
+export default GetStarted

@@ -1,4 +1,6 @@
 import { ThemeVariables } from '../../@types/theme';
+import SvgRocket from './assets/images/SVGs/rocket';
+import SvgSpeedometer from './assets/images/SVGs/speedometer';
 
 export default function ({}: ThemeVariables) {
   return {
@@ -6,7 +8,7 @@ export default function ({}: ThemeVariables) {
       colors: require('./assets/images/colorswatch.png'),
       send: require('./assets/images/send.png'),
       translate: require('./assets/images/translate.png'),
-      speedometer: require('./assets/images/speed_FILL1_wght400_GRAD0_opsz48.png'),
+
 
   };
 }

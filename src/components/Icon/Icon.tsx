@@ -7,18 +7,15 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { useTheme } from 'tracki/src/hooks'
 import { Colors } from 'tracki/src/theme/Variables'
-
+import SVGs from 'tracki/src/theme/assets/images/SVGs'
 
 type Props = {
-    backgroundColor?: ColorValue
-    color?:ColorValue
-    size?:Number
-    font:String
+    size?:number
     name:String
-    onPress:()=>void
+    color:String
   }
   
-  const Icon = ({ name,color ,backgroundColor, size,font, onPress }: Props) => {
+  const Icon = ({ name,size,color }: Props) => {
     const { Layout, Images, Fonts,Colors,FontSize } = useTheme()
     const arr = {
         AntDesign,
@@ -30,23 +27,25 @@ type Props = {
     const style = StyleSheet.create({
       icon: {
         aspectRatio:1,
-        backgroundColor,
         borderRadius:9000000000
       }
     })
     
-    const Family = arr[font]
-  
+    const Obj = SVGs[name];
     return (
-      <></>
+      <>
+        <Obj height={size} width={size} fill={color}/>
+      </>
     )
   }
   // <Family name={name} size={size}/>
   Icon.defaultProps = {
     font:'AntDesign',
+    name:"logo",
     backgroundColor: Colors.transparent,
     color:Colors.dark,
-    size:20
+    size:20,
+    style_custom:{}
   }
   
   export default Icon

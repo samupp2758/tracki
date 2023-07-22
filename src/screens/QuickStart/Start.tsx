@@ -53,7 +53,7 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
   const block1 = () => {
     return (
       <>
-        <Icon name='rocket' size={140} style={{ margin: -15 }} />
+        <Icon name={"speedometer"} size={140}/>
         <Text
           style={[
             Fonts.textBold,
@@ -82,7 +82,7 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
   const block2 = () => {
     return (
       <>
-        <Icon name='rocket' size={140} style={{ margin: -15 }} />
+        <Icon name='rocket' size={140}/>
         <Text
           style={[
             Fonts.textBold,
@@ -113,12 +113,7 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
   const block3 = () => {
     return (
       <>
-        <Icon
-          name='rocket'
-          color={Colors.lightGray}
-          size={140}
-          style={{ margin: -15 }}
-        />
+        <Icon name='build' size={140} color={Colors.lightGray}/>
         <Text
           style={[
             Fonts.textBold,
@@ -179,7 +174,7 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
 
     setTimeout(()=>{
       dispatch(changeTheme({ darkMode: false }))
-      navigation.navigate('Signin');
+      navigation.navigate('GetStarted');
     },500)
   }
 

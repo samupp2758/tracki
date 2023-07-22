@@ -7,7 +7,7 @@ export type MainParamsList = {
 
 export type QuickStartParamsList = {
   Start: undefined;
-  Signin:undefined;
+  GetStarted:undefined;
 }
 
 export type ApplicationStackParamList = {

@@ -5,4 +5,4 @@ export { default as Home } from './Main/Home';
 
 
 export { default as Start } from './QuickStart/Start';
-export { default as Signin } from './QuickStart/Signin';
+export { default as GetStarted } from './QuickStart/GetStarted';
