@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { ThemeVariables } from '../../@types/theme';
+import { Colors } from './Variables';
 
 export default function ({}: ThemeVariables) {
   return StyleSheet.create({
@@ -129,5 +130,11 @@ export default function ({}: ThemeVariables) {
     right0: {
       right: 0,
     },
+    boxShadow:{
+      shadowColor:Colors.dark,
+      shadowOffset:{width:1,height:1},
+      shadowRadius:7,
+      shadowOpacity:0.08,
+    }
   });
 }

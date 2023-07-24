@@ -1,5 +1,5 @@
 
-import { ColorValue, DimensionValue, StyleSheet } from 'react-native'
+import { ColorValue, DimensionValue, StyleSheet, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
@@ -33,9 +33,9 @@ type Props = {
     
     const Obj = SVGs[name];
     return (
-      <>
+      <View style={{}}>
         <Obj height={size} width={size} fill={color}/>
-      </>
+      </View>
     )
   }
   // <Family name={name} size={size}/>

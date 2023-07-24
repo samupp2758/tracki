@@ -8,6 +8,7 @@ export default function ({}: ThemeVariables) {
       colors: require('./assets/images/colorswatch.png'),
       send: require('./assets/images/send.png'),
       translate: require('./assets/images/translate.png'),
+      bgGetStarted:require('./assets/images/bg_getStarted.jpg')
 
 
   };

@@ -12,7 +12,7 @@ import { ThemeNavigationColors } from '../../@types/theme';
  */
 export const Colors = {
   transparent: 'rgba(0,0,0,0)',
-  inputBackground: '#FFFFFF',
+  inputBackground: '#EFEFEFaa',
   white: '#ffffff',
   //Typography
   textGray800: '#000000',
@@ -53,11 +53,13 @@ const tiny = 10;
 const small = tiny * 2; // 20
 const regular = tiny * 3; // 30
 const large = regular * 2; // 60
+const huge = 9000000000000
 export const MetricsSizes = {
   tiny,
   small,
   regular,
   large,
+  huge
 };
 
 export default {
@@ -65,4 +67,5 @@ export default {
   NavigationColors,
   FontSize,
   MetricsSizes,
+
 };

@@ -41,6 +41,7 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
   }))
 
   const init = async () => {
+    dispatch(changeTheme({ darkMode: false }))
   }
 
   useEffect(()=>{
@@ -161,8 +162,6 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
 
       if (temp == 3) {
         dispatch(changeTheme({ darkMode: true }))
-      } else {
-        dispatch(changeTheme({ darkMode: false }))
       }
 
       console.log('Changing Presentation to block' + temp)
@@ -173,7 +172,6 @@ const Start = ({ navigation }: ApplicationScreenProps) => {
     changeViewAnimation.start({opacity:0})
 
     setTimeout(()=>{
-      dispatch(changeTheme({ darkMode: false }))
       navigation.navigate('GetStarted');
     },500)
   }

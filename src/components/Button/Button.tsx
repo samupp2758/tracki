@@ -9,18 +9,19 @@ import {
   StyleSheet,
 } from 'react-native'
 import { useTheme } from '../../hooks'
-import { Colors } from 'tracki/src/theme/Variables'
+import { Colors, MetricsSizes } from 'tracki/src/theme/Variables'
 
 type Props = {
-  height?: DimensionValue
-  width?: DimensionValue
+  height: DimensionValue
+  width: DimensionValue
   title?: String
-  backgroundColor?: ColorValue,
-  color?:ColorValue,
+  backgroundColor: ColorValue,
+  color:ColorValue,
+  borderRadius:number,
   onPress:()=>void
 }
 
-const Button = ({ color ,backgroundColor, height, width, title, onPress }: Props) => {
+const Button = ({ borderRadius,color ,backgroundColor, height, width, title, onPress }: Props) => {
     const { Layout, Images, Fonts,Colors,FontSize } = useTheme()
   const style = StyleSheet.create({
     button: {
@@ -28,7 +29,8 @@ const Button = ({ color ,backgroundColor, height, width, title, onPress }: Props
       height,
       width,
       ...Layout.colCenter,
-      borderRadius:9000000000
+      ...Layout.boxShadow,
+      borderRadius
     },
     title:{
         color,
@@ -50,6 +52,7 @@ Button.defaultProps = {
   color:Colors.primary,
   height: 60,
   width: '90%',
+  borderRadius:MetricsSizes.huge
 }
 
 export default Button
